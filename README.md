@@ -124,7 +124,7 @@ Note: Although this loss function is integrated into the pipeline, the models pe
 #### <ins>Boundary Loss</ins>
 Boundary loss uses a precomputed level set function on the space containing predicted and ground truth voxels as a distance metric and weights the networks voxel predictions. This allows predicted voxels to be considered along with information on their distance to the ground truth boundary. This is contrary to popular regional losses such as Dice which measures the region/volume of overlapping voxels but where all misclassified voxels are treated equally.
 
-&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; **Boundary loss** = <sub><img src="https://github.com/bragancas/texttest/blob/master/files/Boundary_loss.png"></sub>
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; **Boundary loss** = <sub><img src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/Boundary_loss.png"></sub>
 
 
 where,	Ω denotes the spatial volume under consideration and q ∈ Ω
