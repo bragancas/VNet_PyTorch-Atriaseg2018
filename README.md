@@ -66,8 +66,6 @@ The above generated images in addition to the initial images yields a total of 4
 
 ### Network Architecture
 
-<img align="left" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/Network%20schematic.pdf">
-
 ### Hyperparameters selected
 * 5x5x5 Convolutions with stride 1
 * 2x2x2 Convolutions with stride 2 for VNet downsampling
