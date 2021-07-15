@@ -34,9 +34,9 @@ Ahmadi, S. A.
 The dataset consists of 100 3D MRIs having dimensions of either 88x576x576(DxHxW) or 
 88x640x640(DxHxW) voxels and are available in *nrrd* format with each having a spatial resolution of 0.625x0.625x0.625 mm<sup>3</sup>. The input data voxels are grayscale intensities with values from 0-255 and the label data voxels are binary with value of 0 or 255(converted to 1) representing background or atrial structure respectively. This dataset is split into 80 and 20 images for training and validation respectively.
 
-<img align="left" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/raw15.gif">
+<img align="left" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/raw15.gif">
 
-<img height="288" width="288" align="center" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/raw15_2.gif">
+<img height="288" width="288" align="center" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/raw15_2.gif">
 
 
 ## Implementation Details
@@ -124,7 +124,7 @@ Note: Although this loss function is integrated into the pipeline, the models pe
 #### <ins>Boundary Loss</ins>
 Boundary loss uses a precomputed level set function on the space containing predicted and ground truth voxels as a distance metric and weights the networks voxel predictions. This allows predicted voxels to be considered along with information on their distance to the ground truth boundary. This is contrary to popular regional losses such as Dice which measures the region/volume of overlapping voxels but where all misclassified voxels are treated equally.
 
-&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; **Boundary loss** = <sub><img src="https://github.com/bragancas/texttest/blob/master/Boundary_loss.png"></sub>
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; **Boundary loss** = <sub><img src="https://github.com/bragancas/texttest/blob/master/files/Boundary_loss.png"></sub>
 
 
 where,	Ω denotes the spatial volume under consideration and q ∈ Ω
@@ -165,12 +165,12 @@ Note: The post-processing step is only performed in the predict.py script as it'
 
 ## Output Data
 
-<img align="left" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/mri+label15.gif">
-<img align="center" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/prediction15.gif">
+<img align="left" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/mri+label15.gif">
+<img align="center" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/prediction15.gif">
 
 
-<img height="288" width="288" align="left" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/mri+label15_2.gif">
-<img height="288" width="288" align="center" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/prediction15_2.gif">
+<img height="288" width="288" align="left" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/mri+label15_2.gif">
+<img height="288" width="288" align="center" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/prediction15_2.gif">
 
 
 ## Results
