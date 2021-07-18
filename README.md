@@ -1,15 +1,15 @@
 # Pytorch_VNet_atriaseg2018
 
-An image segmentation project using *PyTorch* to segment the Left Atrium(LA) in 3D Late gadolinium enhanced - cardiac MR images*(LGE-CMR)* of the human heart. 
+An image segmentation project using *PyTorch* to segment the Left Atrium(LA) in 3D Late gadolinium enhanced - cardiac MR images(*LGE-CMR*) of the human heart. 
 
-Cardiovascular diseases are responsible for over 3.8 million deaths in Europe  with high populations dying as a result of CVD it is necessary to diagnose CVD and some ways are throught bio markers however they take a lot of time for manual delineation and so this
+With over 3.8 million deaths annually as a result of Cardiovascular diseases(CVD), CVD is the leading cause of mortality in Europe having an economic impact estimated at €210 Billion within the EU alone. Combating CVD necessitates recognition of the early stages of cardiac events to perform risk stratification and develop treatment strategies. Initial steps towards diagnosing cardiac maladaptation involve segmenting the cardiac anatomical structures captured through common imaging modalities like MRIs, echocardiographs, CT images to extract quantitative measures like mass, volume, myocardial thickness, etc. However, being performed manually this is a time consuming process, makes it prone to error and is also subject to inter as well as intra observer variability in mapping which affects the quality and consistency of the mapped structure. Automated assistance would significantly reduce the time to accomplish the delineation of multiple samples and provide appreciable consistency of mapping. 
 
-A baseline network architecture based on the [2D UNet](https://arxiv.org/abs/1505.04597), the [*VNet*](https://doi.org/10.1109/3DV.2016.79) which uses volumetric convolutional kernels is trained initially and then enhanced using [*attention modules*](http://bmvc2018.org/contents/papers/0092.pdf) to observe performance gain. Both networks are trained using *Dice loss* and a hybrid of *Dice* + [*Boundary loss*](https://doi.org/10.1016/j.media.2020.101851) in an attempt to reduce the average Hausdorff Distance(HD) between the predicted and ground truth(GT) atrial structure boundaries.
+An automated approach that would be suited to perform 3D atrial structure mapping using a neural network architecture is the [*VNet*](https://doi.org/10.1109/3DV.2016.79) based on the [2D UNet](https://arxiv.org/abs/1505.04597).The VNet uses volumetric convolutional kernels to learn from 3D images and is initially optimised to achieve an acceptable baseline. It's then enhanced using [*attention modules*](http://bmvc2018.org/contents/papers/0092.pdf) to achieve performance gains. Both networks are first trained using *Dice loss* and later using a hybrid of *Dice* + [*Boundary loss*](https://doi.org/10.1016/j.media.2020.101851) in an attempt to reduce the average Hausdorff Distance(HD) between the predicted and ground truth(GT) atrial structure boundaries.
 
 For some more depth on
-- [Dataset](link)
-- [LA Anatomy and Atrial fibrillation](link)
-- [Biomedical Image segmentation](link)
+- [LA Anatomy](https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/Useful_Links.txt)
+- [Dataset and other successful techniques](https://arxiv.org/abs/2004.12314)
+- [Useful papers for image segmentation](https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/Useful_Links.txt)
 
 ## References
 [V-Net: Fully convolutional neural networks for volumetric medical image segmentation](https://doi.org/10.1109/3DV.2016.79) Milletari, F., Navab, N. and
@@ -32,7 +32,7 @@ Ahmadi, S. A.
 
 ## Input Data
 The dataset consists of 100 3D MRIs having dimensions of either 88x576x576(DxHxW) or 
-88x640x640(DxHxW) voxels and are available in *nrrd* format with each having a spatial resolution of 0.625x0.625x0.625 mm<sup>3</sup>. The input data voxels are grayscale intensities with values from 0-255 and the label data voxels are binary with value of 0 or 255(converted to 1) representing background or atrial structure respectively. This dataset is split into 80 and 20 images for training and validation respectively.
+88x640x640(DxHxW) voxels and are available in *nrrd* format with each having a spatial resolution of 0.625x0.625x0.625 mm<sup>3</sup>. The input data voxels are grayscale intensities with values between 0-255 and the label data voxels are binary with value of 0 or 255(converted to 1) representing background addition atrial structure respectively. This dataset is split into 80 and 20 images for training and validation respectively.
 
 <img align="left" src="https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/files/raw15.gif">
 
@@ -41,11 +41,11 @@ The dataset consists of 100 3D MRIs having dimensions of either 88x576x576(DxHxW
 
 ## Implementation Details
 
-The attached link shows the training + testing piplines and network architecture≈ being implemented in this project.
+The attached link shows the training + testing pipelines and network architecture being implemented in this project.
 
-[Training and testing pipeline depiction ](https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/Implementation%20Details.pdf)
+[**Training and testing pipeline depiction**](https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/Implementation%20Details.pdf)
 
-[Network architecture](https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/Network%20schematic.pdf)
+[**Network architecture**](https://github.com/bragancas/VNet_PyTorch-Atriaseg2018/blob/master/Network%20schematic.pdf)
 
 ### Data pre-processing
 The images for each data point is converted from nrrd into a numpy array using SimpleITK. They are then zero padded to 96x640x640 to eliminate variation in image dimensions (aswell as to account for an even feature map progression through the VNet architecture stages). Viewing the images it's observed that the atrial structure we intend to segment occupies a very small portion(on average 20%) of an entire image with most of the voxels comprising of background. The background bears no significance on defining the atrial structure and eliminating it would reduce data handling and training times drastically. To achieve this, for each dimension the start and end indexes/slices of the image in which the atrial structure is present must be learned, allowing the volume containing the structure to be cropped.
