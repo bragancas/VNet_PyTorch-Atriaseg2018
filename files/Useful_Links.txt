@@ -1,0 +1,50 @@
+LA Anatomy-
+
+https://www.ahajournals.org/doi/10.1161/CIRCEP.111.962720?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed
+[Left Atrial Anatomy Revisited
+-Siew Yen Ho , José Angel Cabrera , and Damian Sanchez-Quintana]
+
+https://www.sciencedirect.com/science/article/pii/S2214854X19300512
+[An anatomical review of the left atrium
+-Shinelle Whiteman, Erfanul Saker, Vincent Courant, Sonja Salandy, Jerzy Gielecki, Anna Zurada, Marios Loukas]
+
+
+
+
+Dataset and other successful techniques-
+
+https://arxiv.org/abs/2004.12314
+[A Global Benchmark of Algorithms for Segmenting Late Gadolinium-Enhanced Cardiac Magnetic Resonance Imaging
+-Zhaohan Xiong, Qing Xia, Zhiqiang Hu, Ning Huang, Cheng Bian, Yefeng Zheng, Sulaiman Vesal, Nishant Ravikumar, Andreas Maier, Xin Yang, Pheng-Ann Heng, Dong Ni, Caizi Li, Qianqian Tong, Weixin Si, Elodie Puybareau, Younes Khoudli, Thierry Geraud, Chen Chen, Wenjia Bai, Daniel Rueckert, Lingchao Xu, Xiahai Zhuang, Xinzhe Luo, Shuman Jia, Maxime Sermesant, Yashu Liu, Kuanquan Wang, Davide Borra, Alessandro Masci, Cristiana Corsi, Coen de Vente, Mitko Veta, Rashed Karim, Chandrakanth Jayachandran Preetha, Sandy Engelhardt, Menyun Qiao, Yuanyuan Wang, Qian Tao, Marta Nunez-Garcia, Oscar Camara, Nicolo Savioli, Pablo Lamata, Jichao Zhao]
+
+
+
+
+Useful papers for image segmentation-
+
+https://arxiv.org/abs/2001.05566
+[Image Segmentation Using Deep Learning: A Survey
+-Shervin Minaee, Yuri Boykov, Fatih Porikli, Antonio Plaza, Nasser Kehtarnavaz, Demetri Terzopoulos]
+
+https://arxiv.org/abs/1911.03723
+[Deep learning for cardiac image segmentation: A review
+-Chen Chen, Chen Qin, Huaqi Qiu, Giacomo Tarroni, Jinming Duan, Wenjia Bai, Daniel Rueckert]
+
+https://www.frontiersin.org/articles/10.3389/fcvm.2020.00086/full
+[Mini Review: Deep Learning for Atrial Segmentation From Late Gadolinium-Enhanced MRIs
+-Kevin Jamart, Zhaohan Xiong, Gonzalo D. Maso Talou, Martin K. Stiles and Jichao Zhao]
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6364320/
+[Fully Automatic Left Atrium Segmentation From Late Gadolinium Enhanced Magnetic Resonance Imaging Using a Dual Fully Convolutional Neural Network
+-Zhaohan Xiong, Vadim V Fedorov, Xiaohang Fu, Elizabeth Cheng, Rob Macleod, Jichao Zhao]
+
+https://ieeexplore.ieee.org/document/8840843
+[Dilated 3D Convolutional Neural Networks for Brain MRI Data Classification
+-Zijian Wang; Yaoru Sun; Qianzi Shen; Lei Cao]
+
+https://www.mdpi.com/2313-433X/6/7/65/htm
+[Fully Automated 3D Cardiac MRI Localisationand Segmentation Using Deep Neural Networks-Sulaiman Vesal, Andreas Maier and Nishant Ravikumar]
+
+https://arxiv.org/abs/1808.08114
+[Attention gated networks: Learning to leverage salient regions in medical images -Jo Schlemper, Ozan Oktay, Michiel Schaap, Mattias Heinrich, Bernhard Kainz, Ben Glocker, Daniel Rueckert]
+
